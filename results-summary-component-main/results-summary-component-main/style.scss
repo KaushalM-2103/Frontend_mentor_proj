@@ -1,0 +1,205 @@
+@use "./scss/mixin" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+
+*,
+::after,
+::before,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+body {
+  @include flex(center);
+  position: relative;
+  min-height: 100dvh;
+}
+
+a {
+  text-decoration: none;
+}
+main {
+  @include flex(center);
+  max-width: 32em;
+  height: 22em;
+  box-shadow: 0.5rem 0.5rem 0.8rem hsla(224, 30%, 27%, 10%);
+  border-radius: 1.5rem;
+}
+
+.left-card {
+  width: 50%;
+  min-height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    hsl(252, 100%, 65%),
+    hsl(241, 81%, 54%)
+  );
+  text-align: center;
+  @include flex(center);
+  flex-direction: column;
+  border-radius: 1.5rem;
+
+  h3 {
+    margin-bottom: 1.5rem;
+    @include score-circle-prop(hsla(241, 100%, 89%, 90%), 1rem);
+  }
+
+  .result_score {
+    width: 8em;
+    height: 8em;
+    @include flex(center);
+    flex-direction: column;
+    border-radius: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      hsla(256, 72%, 46%, 1),
+      hsla(241, 72%, 46%, 0)
+    );
+
+    h1 {
+      @include score-circle-prop(white, 3rem);
+    }
+    p {
+      @include score-circle-prop(hsla(241, 100%, 89%, 50%), 0.8rem);
+    }
+  }
+
+  h2 {
+    margin-top: 1rem;
+    @include score-circle-prop(white, 1.2rem);
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .score-dis {
+    padding: 1rem 2.5rem;
+    @include score-circle-prop(hsla(241, 100%, 89%, 90%), 0.8rem);
+  }
+}
+
+.right-card {
+  width: 50%;
+  height: 20em;
+  padding-inline: 1.5rem;
+
+  h3 {
+    margin-block: 0.8rem;
+  }
+
+  .response-r {
+    @include flex(space-between);
+    p {
+      @include resp(hsl(0, 100%, 67%) !important, 0.8rem);
+    }
+  }
+
+  .response-m {
+    @include flex(space-between);
+    p {
+      @include resp(hsl(39, 100%, 56%) !important, 0.8rem);
+    }
+  }
+
+  .response-ve {
+    @include flex(space-between);
+    p {
+      @include resp(hsl(166, 100%, 37%) !important, 0.8rem);
+    }
+  }
+
+  .response-vi {
+    @include flex(space-between);
+    p {
+      @include resp(hsl(234, 85%, 45%) !important, 0.8rem);
+    }
+  }
+
+  .res-img img {
+    max-width: 1rem;
+    margin-right: 0.5rem;
+  }
+  .summ_list_r {
+    @include summlist(hsla(0, 100%, 67%, 7%));
+    @include summlist_p;
+  }
+
+  .summ_list_m {
+    @include summlist(hsla(39, 100%, 56%, 7%));
+    @include summlist_p;
+  }
+
+  .summ_list_ve {
+    @include summlist(hsla(166, 100%, 37%, 7%));
+    @include summlist_p;
+  }
+
+  .summ_list_vi {
+    @include summlist(hsla(234, 85%, 45%, 7%));
+    @include summlist_p;
+  }
+  button,
+  a {
+    color: aliceblue;
+  }
+  button {
+    border: none;
+    width: 100%;
+    margin-top: 1.8rem;
+    border-radius: 10rem;
+    padding: 0.7rem 1rem;
+    background-color: hsl(224, 30%, 27%);
+
+    &:hover{
+        background-image: linear-gradient(    to bottom,
+        hsl(252, 100%, 65%),
+        hsl(241, 81%, 54%));
+        cursor: pointer;
+    }
+  }
+}
+
+@media  screen and (max-width:448px) {
+
+  body {
+    display: block;
+  }
+  main {
+    display: block;
+    min-height: 100%;
+    box-shadow: none;
+    border-radius: none;
+  }
+  .left-card{
+    width: 100%;
+    min-height: 80%;
+    border-radius:0 0 1.5rem 1.5rem;
+    
+    h3 {
+      margin-top: 1rem;
+      @include score-circle-prop(hsla(241, 100%, 89%, 90%), 1rem);
+    }
+    .score-dis {
+      padding: 1rem 2rem;
+      @include score-circle-prop(hsla(241, 100%, 89%, 90%), 0.8rem);
+    }
+  }
+
+  .right-card{
+    width: 100%;
+  }
+  .attribution {
+    font-size: .6rem;
+    text-align: center;
+    width: 100vw;
+    padding-block: .3rem;
+    position: fixed;
+    background-color:hsl(221, 100%, 96%);
+  }
+
+
+  button{
+    margin-bottom: 2.5rem;
+  }
+}

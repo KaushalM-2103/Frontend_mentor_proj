@@ -1,0 +1,34 @@
+@mixin flex($justy-cont) {
+  display: flex;
+  justify-content: $justy-cont;
+  align-items: center;
+}
+
+@mixin score-circle-prop($color, $fontSize) {
+  color: $color;
+  font-size: $fontSize;
+}
+
+@mixin resp($color, $fontSize) {
+  color: $color;
+  font-size: $fontSize;
+  font-weight: 300;
+}
+
+@mixin summlist($bg-color) {
+  max-width: 100%;
+  margin-block: .7rem;
+  @include flex(space-between);
+  font-size: 0.8rem;
+  background-color: $bg-color;
+  padding: .7rem;
+  border-radius: 0.3rem;
+  font-weight: bold;
+}
+
+@mixin summlist_p{
+    color: hsl(224, 30%, 27%);
+    span {
+      color: hsla(224, 30%, 27%, 50%);
+    }
+}
