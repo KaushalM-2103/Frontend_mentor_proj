@@ -17,17 +17,17 @@
 
 @mixin summlist($bg-color) {
   max-width: 100%;
-  margin-block: .7rem;
+  margin-block: .6rem;
   @include flex(space-between);
-  font-size: 0.8rem;
   background-color: $bg-color;
-  padding: .7rem;
-  border-radius: 0.3rem;
-  font-weight: bold;
+  padding: .9rem;
+  border-radius: 0.4rem;
+  font-weight: 800;
 }
 
 @mixin summlist_p{
     color: hsl(224, 30%, 27%);
+    font-size: .9rem;
     span {
       color: hsla(224, 30%, 27%, 50%);
     }

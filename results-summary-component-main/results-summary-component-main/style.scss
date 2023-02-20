@@ -23,8 +23,8 @@ a {
 }
 main {
   @include flex(center);
-  max-width: 32em;
-  height: 22em;
+  width: 44rem;
+  height: 30em;
   box-shadow: 0.5rem 0.5rem 0.8rem hsla(224, 30%, 27%, 10%);
   border-radius: 1.5rem;
 }
@@ -41,15 +41,17 @@ main {
   @include flex(center);
   flex-direction: column;
   border-radius: 1.5rem;
+  position: relative;
 
   h3 {
-    margin-bottom: 1.5rem;
-    @include score-circle-prop(hsla(241, 100%, 89%, 90%), 1rem);
+    position: absolute;
+    top:2.5rem;
+    @include score-circle-prop(hsla(241, 100%, 89%, 90%), 1.5rem);
   }
 
   .result_score {
-    width: 8em;
-    height: 8em;
+    width: 10em;
+    height: 10em;
     @include flex(center);
     flex-direction: column;
     border-radius: 100%;
@@ -60,64 +62,70 @@ main {
     );
 
     h1 {
-      @include score-circle-prop(white, 3rem);
+      @include score-circle-prop(white, 3.4rem);
     }
     p {
-      @include score-circle-prop(hsla(241, 100%, 89%, 50%), 0.8rem);
+      @include score-circle-prop(hsla(241, 100%, 89%, 50%), 1rem);
     }
   }
 
   h2 {
-    margin-top: 1rem;
-    @include score-circle-prop(white, 1.2rem);
+    position: relative;
+    top:1.4rem;
+    @include score-circle-prop(white, 1.8rem);
     letter-spacing: 1px;
     font-weight: 700;
   }
   .score-dis {
-    padding: 1rem 2.5rem;
-    @include score-circle-prop(hsla(241, 100%, 89%, 90%), 0.8rem);
+    width: 20rem;
+    position: relative;
+    top:2rem;
+    height: auto;
+    padding: 1rem 1.2rem;
+    @include score-circle-prop(hsla(241, 100%, 89%, 90%), 1.2rem);
   }
 }
 
 .right-card {
-  width: 50%;
-  height: 20em;
-  padding-inline: 1.5rem;
+  min-width: 50%;
+  min-height: 100%;
+  padding-inline: 2rem;
 
   h3 {
-    margin-block: 0.8rem;
+    margin-top: 2.8rem;
+    margin-bottom: 1rem;
   }
 
   .response-r {
     @include flex(space-between);
     p {
-      @include resp(hsl(0, 100%, 67%) !important, 0.8rem);
+      @include resp(hsl(0, 100%, 67%) !important, .9rem);
     }
   }
 
   .response-m {
     @include flex(space-between);
     p {
-      @include resp(hsl(39, 100%, 56%) !important, 0.8rem);
+      @include resp(hsl(39, 100%, 56%) !important, .9rem);
     }
   }
 
   .response-ve {
     @include flex(space-between);
     p {
-      @include resp(hsl(166, 100%, 37%) !important, 0.8rem);
+      @include resp(hsl(166, 100%, 37%) !important, .9rem);
     }
   }
 
   .response-vi {
     @include flex(space-between);
     p {
-      @include resp(hsl(234, 85%, 45%) !important, 0.8rem);
+      @include resp(hsl(234, 85%, 45%) !important, .9rem);
     }
   }
 
   .res-img img {
-    max-width: 1rem;
+    max-width: 1.2rem;
     margin-right: 0.5rem;
   }
   .summ_list_r {
@@ -139,16 +147,14 @@ main {
     @include summlist(hsla(234, 85%, 45%, 7%));
     @include summlist_p;
   }
-  button,
-  a {
-    color: aliceblue;
-  }
   button {
     border: none;
     width: 100%;
     margin-top: 1.8rem;
+    color: aliceblue;
     border-radius: 10rem;
-    padding: 0.7rem 1rem;
+    padding: 1rem 1rem;
+    font-size: 1rem;
     background-color: hsl(224, 30%, 27%);
 
     &:hover{
@@ -167,17 +173,19 @@ main {
   }
   main {
     display: block;
+
     min-height: 100%;
     box-shadow: none;
     border-radius: none;
   }
   .left-card{
-    width: 100%;
+    width: 100vw;
     min-height: 80%;
     border-radius:0 0 1.5rem 1.5rem;
     
-    h3 {
-      margin-top: 1rem;
+    h3 {    
+      position: absolute;
+      top:1.5rem;
       @include score-circle-prop(hsla(241, 100%, 89%, 90%), 1rem);
     }
     .score-dis {
@@ -187,17 +195,9 @@ main {
   }
 
   .right-card{
-    width: 100%;
-  }
-  .attribution {
-    font-size: .6rem;
-    text-align: center;
     width: 100vw;
-    padding-block: .3rem;
-    position: fixed;
-    background-color:hsl(221, 100%, 96%);
-  }
 
+  }
 
   button{
     margin-bottom: 2.5rem;
