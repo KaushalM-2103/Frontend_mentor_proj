@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+
+$width: 18.75rem;
+
+@mixin card-text-attrubute($fs, $colors, $m) {
+  font-size: $fs;
+  color: $colors;
+  margin: $m;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-family: "Outfit", sans-serif;
+  background: hsl(212, 45%, 89%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  max-width: $width;
+  padding: 15px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1em;
+  text-align: center;
+  img {
+    max-width: $width;
+    border-radius: 0.6rem;
+  }
+  h1 {
+    @include card-text-attrubute(1.25rem, hsl(218, 44%, 22%), 1rem);
+  }
+  p {
+    @include card-text-attrubute(0.9rem, hsl(220, 15%, 55%), 1rem);
+  }
+}
